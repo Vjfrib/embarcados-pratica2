@@ -236,8 +236,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == GPIO_PIN_13)
     {
-        //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
-        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+        //HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET); //somente sobrescreve
+        HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); //faz o toggle, alternancia
     }
     else
     {
