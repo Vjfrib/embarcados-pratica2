@@ -43,7 +43,7 @@
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
-
+volatile uint32_t tempo_pisca = 500; // Var de tempo
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,6 +97,9 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin); // função de troca
+    HAL_Delay(tempo_pisca); // piscar
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -232,6 +235,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+/*                         //antigo codigo, acende  apaga
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if (GPIO_Pin == GPIO_PIN_13)
@@ -243,6 +247,22 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     {
         __NOP();
     }
+}
+*/
+                         //novo codigo, pisca e pisca rapido
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  if (GPIO_Pin == B1_Pin)
+  {
+    if (tempo_pisca == 500) // se 500
+    {
+      tempo_pisca = 250; // troca pra 250
+    }
+    else
+    {
+      tempo_pisca = 500; // retorna 500
+    }
+  }
 }
 /* USER CODE END 4 */
 
