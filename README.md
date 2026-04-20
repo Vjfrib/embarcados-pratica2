@@ -6,7 +6,7 @@
 - VINÍCIUS RIBEIRO
 
 ## Projeto Realiado:
-<img width="1334" height="783" alt="image" src="https://github.com/user-attachments/assets/f92c6b68-4fed-475b-ae33-2998078aaa7f" />
+<img width="1122" height="545" alt="image" src="https://github.com/user-attachments/assets/7543be74-c8d1-4764-873b-9a2044494495" />
 
 ---
   
